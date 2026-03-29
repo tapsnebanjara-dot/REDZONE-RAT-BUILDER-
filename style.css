@@ -1,0 +1,64 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Courier New', monospace; 
+    background: #0a0a0a; 
+    color: #00ff88; 
+    min-height: 100vh; 
+    padding: 20px;
+}
+.container { max-width: 1000px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; }
+h1 { color: #ff00ff; font-size: 2.5em; text-shadow: 0 0 30px #ff00ff; }
+.glow { animation: glow 2s infinite; }
+@keyframes glow { 0%,100%{text-shadow:0 0 20px #ff00ff} 50%{text-shadow:0 0 40px #ff00ff} }
+
+.config-panel, .features-panel { 
+    background: rgba(0,255,136,0.1); 
+    padding: 25px; 
+    border-radius: 15px; 
+    margin: 20px 0; 
+    border: 2px solid #00ff88;
+}
+.input-group { margin: 15px 0; }
+label { display: block; margin-bottom: 8px; color: #ccc; }
+input { 
+    width: 100%; padding: 15px; background: #000; 
+    border: 2px solid #00ff88; color: #00ff88; 
+    border-radius: 10px; font-family: inherit; font-size: 16px;
+}
+input:focus { outline: none; box-shadow: 0 0 20px #00ff88; }
+
+.features-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 15px; }
+.features-panel label { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+
+.action-buttons { display: flex; gap: 20px; justify-content: center; margin: 30px 0; }
+button { 
+    padding: 20px 40px; font-size: 18px; font-weight: bold; 
+    background: linear-gradient(45deg, #00ff88, #00cc66); 
+    color: #000; border: none; border-radius: 12px; 
+    cursor: pointer; transition: all 0.3s;
+}
+button:hover { transform: scale(1.05); box-shadow: 0 10px 30px #00ff88; }
+
+.progress-bar { height: 8px; background: #333; border-radius: 4px; overflow: hidden; margin: 20px 0; display: none; }
+#progress-fill { height: 100%; background: linear-gradient(90deg, #00ff88, #ff00ff); width: 0%; transition: width 0.3s; }
+
+.status { padding: 20px; border-radius: 12px; margin: 20px 0; font-weight: bold; text-align: center; display: none; }
+.success { background: rgba(0,255,136,0.2); border: 2px solid #00ff88; color: #00ff88; }
+.error { background: rgba(255,68,68,0.2); border: 2px solid #ff4444; color: #ff4444; }
+.building { background: rgba(255,193,7,0.3); border: 2px solid #ffaa00; color: #ffaa00; animation: pulse 1s infinite; }
+
+.output { 
+    background: #000; color: #ff4444; padding: 25px; border-radius: 12px; 
+    white-space: pre-wrap; font-size: 14px; max-height: 400px; 
+    overflow-y: auto; border: 2px solid #ff4444; display: none;
+    margin: 20px 0;
+}
+.download-area { display: none; text-align: center; margin: 30px 0; }
+.download-btn { 
+    display: inline-block; padding: 20px 50px; background: #ff00ff; 
+    color: #fff; text-decoration: none; border-radius: 12px; 
+    font-weight: bold; font-size: 18px; margin: 20px;
+}
+.download-btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px #ff00ff; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
